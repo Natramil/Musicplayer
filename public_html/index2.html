@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>Love yourself:Tear</title>
+    </head>
+    <body>
+       <div class="main">
+           <div class="container">
+               <div class="row">
+			<div class="col-md-12">
+				<h3>Love yourself:Tear</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://fashionindustrybroadcast.com/wp-content/uploads/2018/09/bts.png" alt="">
+				</a>
+				<h4>Fake love</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRt-sbaFILUi1Tgr3P1-kgXtYmQdo_HU_3JQB3HCXhFrq2acw3Y&usqp=CAU" alt="">
+				</a>
+				<h4>Magic shop</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://i.pinimg.com/originals/5c/85/a4/5c85a4c1388514c1ed9f10fcbac3c18c.jpg" alt="">
+				</a>
+				<h4>Anpanman</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://i1.sndcdn.com/artworks-000352519032-0aopab-t500x500.jpg" alt="">
+				</a>
+				<h4>Airplane pt.2</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src="https://a.wattpad.com/cover/164535621-352-k553643.jpg" alt="">
+				</a>
+				<h4>So what</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://i.imgur.com/t6D8znW.jpg" alt="">
+				</a>
+				<h4>The Truth untold</h4>
+                                <p>BTS-Vocal line</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://66.media.tumblr.com/49e2665a8fc4b1eebb5a7d1312def117/tumblr_inline_p8zm9aILYz1vsjnux_1280.png" alt="">
+				</a>
+				<h4>Singularity</h4>
+                                <p>BTS-Taehyung</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="7">
+					<img src="https://i.ytimg.com/vi/nFM5tVN3INo/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Outro:Tear</h4>
+                                <p>BTS-Rap line</p>
+			</div>
+		</div>
+
+           </div>
+       </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                        {
+				name: 'Fake love',
+				artist: 'BTS',
+				url: 'source/Fake love.mp3',
+				cover: 'https://fashionindustrybroadcast.com/wp-content/uploads/2018/09/bts.png',
+			},
+                        {
+				name: 'Magic shop',
+				artist: 'BTS',
+				url: 'source/Magic shop.mp3',
+				cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRt-sbaFILUi1Tgr3P1-kgXtYmQdo_HU_3JQB3HCXhFrq2acw3Y&usqp=CAU',
+			},
+                        {
+				name: 'Anpanman',
+				artist: 'BTS',
+				url: 'source/Anpanman.mp3',
+				cover: 'https://i.pinimg.com/originals/5c/85/a4/5c85a4c1388514c1ed9f10fcbac3c18c.jpg',
+			},
+                        {
+				name: 'Airplane pt.2',
+				artist: 'BTS',
+				url: 'source/Airplane pt.2.mp3',
+				cover: 'https://i1.sndcdn.com/artworks-000352519032-0aopab-t500x500.jpg',
+			},
+                        {
+				name: 'So what',
+				artist: 'BTS',
+				url: 'source/So what.mp3',
+				cover: 'https://a.wattpad.com/cover/164535621-352-k553643.jpg',
+			},
+                        {
+				name: 'The Truth untold',
+				artist: 'BTS-Vocal line',
+				url: 'source/The Truth Untold.mp3',
+				cover: 'https://i.imgur.com/t6D8znW.jpg',
+			},
+                        {
+				name: 'Singularity',
+				artist: 'BTS-Taehyung',
+				url: 'source/Singularity.mp3',
+				cover: 'https://66.media.tumblr.com/49e2665a8fc4b1eebb5a7d1312def117/tumblr_inline_p8zm9aILYz1vsjnux_1280.png',
+			},
+                        {
+				name: 'Outro:tear',
+				artist: 'BTS-Rap line',
+				url: 'source/Outro Tear.mp3',
+				cover: 'https://i.ytimg.com/vi/nFM5tVN3INo/maxresdefault.jpg',
+			},
+
+
+		    ]
+		});
+</script>
+
+    </body>
+</html>

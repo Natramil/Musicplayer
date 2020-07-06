@@ -1,0 +1,166 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>Love yourself:Her</title>
+    </head>
+    <body>
+       <div class="main">
+           <div class="container">
+               <div class="row">
+			<div class="col-md-12">
+				<h3>Love yourself:Her</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://wallpapercave.com/wp/wp3589981.jpg" alt="">
+				</a>
+				<h4>DNA</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://i1.sndcdn.com/artworks-000347448522-5qxwde-t500x500.jpg" alt="">
+				</a>
+				<h4>Serendipity</h4>
+                                <p>BTS-Jimin</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://cdn130.picsart.com/285860718013201.jpg?type=webp&to=min&r=640" alt="">
+				</a>
+				<h4>Best of me</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://c-sf.smule.com/rs-s79/arr/b6/ee/0f677d16-e9cb-4ddc-8af9-42a0d518ced7_1024.jpg" alt="">
+				</a>
+				<h4>Illegal</h4>
+                                <p>BTS-vocal line</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src="https://wallpapercave.com/wp/wp4749716.jpg" alt="">
+				</a>
+				<h4>Pied piper</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://c-sf.smule.com/rs-s80/arr/df/a2/1ae7cf95-0e11-415e-acad-ff98b9108f0e_1024.jpg" alt="">
+				</a>
+				<h4>Mic drop</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://images.genius.com/e3446e248b74c227889fede98a1e99d2.828x768x1.png" alt="">
+				</a>
+				<h4>GO GO</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="7">
+					<img src="https://i.pinimg.com/736x/77/4c/e0/774ce0aee13e272aae09ca4e36721166.jpg" alt="">
+				</a>
+				<h4>Outro:Her</h4>
+                                <p>BTS-Rap line</p>
+			</div>
+		</div>
+
+           </div>
+       </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                        {
+				name: 'DNA',
+				artist: 'BTS',
+				url: 'source/DNA.mp3',
+				cover: 'https://wallpapercave.com/wp/wp3589981.jpg',
+			},
+                       
+                        {
+				name: 'Serendipity',
+				artist: 'BTS-Jimin',
+				url: 'source/Serendipity.mp3',
+				cover: 'https://i1.sndcdn.com/artworks-000347448522-5qxwde-t500x500.jpg',
+			},
+                        {
+				name: 'Best of me',
+				artist: 'BTS',
+				url: 'source/Best of me.mp3',
+				cover: 'https://cdn130.picsart.com/285860718013201.jpg?type=webp&to=min&r=640',
+			},
+                        {
+				name: 'Illegal',
+				artist: 'BTS-Vocal line',
+				url: 'source/Illegal.mp3',
+				cover: 'https://c-sf.smule.com/rs-s79/arr/b6/ee/0f677d16-e9cb-4ddc-8af9-42a0d518ced7_1024.jpg',
+			},
+                        {
+				name: 'Pied piper',
+				artist: 'BTS',
+				url: 'source/Pier piper.mp3',
+				cover: 'https://wallpapercave.com/wp/wp4749716.jpg',
+			},
+                        {
+				name: 'Mic drop',
+				artist: 'BTS',
+				url: 'source/Mic drop.mp3',
+				cover: 'https://c-sf.smule.com/rs-s80/arr/df/a2/1ae7cf95-0e11-415e-acad-ff98b9108f0e_1024.jpg',
+			},
+                        {
+				name: 'GO GO',
+				artist: 'BTS',
+				url: 'source/Go go.mp3',
+				cover: 'https://images.genius.com/e3446e248b74c227889fede98a1e99d2.828x768x1.png',
+			},
+                         {
+				name: 'Outro:Her',
+				artist: 'BTS-Rap line',
+				url: 'source/Her.mp3',
+				cover: 'https://i.pinimg.com/736x/77/4c/e0/774ce0aee13e272aae09ca4e36721166.jpg',
+			},
+
+
+		    ]
+		});
+</script>
+
+    </body>
+</html>

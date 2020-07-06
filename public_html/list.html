@@ -1,0 +1,183 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        
+        
+
+    <title>Map of the soul:7</title>
+    
+ 	</head>
+	<body>
+
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Map of the soul:7</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="javascript:void();" class="album-poster" data-switch="0">
+					<img src="https://www.somagnews.com/wp-content/uploads/2020/02/3-2-e1582311435505.jpg" alt="">
+				</a>
+				<h4>ON</h4>
+				<p>BTS-7</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://i2.wp.com/checkersaga.com/wp-content/uploads/2020/05/bts-vocal-line.jpg?fit=750%2C550&ssl=1" alt="">
+				</a>
+				<h4>Zero o clock</h4>
+				<p>BTS-Vocal line</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://www.somagnews.com/wp-content/uploads/2020/01/51-2-e1579735088904.jpg" alt="">
+				</a>
+				<h4>ugh</h4>
+				<p>BTS-Rap line</p>
+			</div>
+
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://66.media.tumblr.com/d9f9f03ffefae78cbb06515dc18dcafe/tumblr_inline_pnt5lufhFq1rpcdyn_1280.jpg" alt="">
+				</a>
+				<h4>Friends</h4>
+				<p>BTS-jimin and v</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src="https://i.pinimg.com/originals/f4/ed/96/f4ed96579e23c6a3150240238b5ac97f.jpg" alt="">
+				</a>
+				<h4>Moon</h4>
+				<p>BTS-Jin</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://www.allkpop.com/upload/2019/08/content/251242/1566751372-img-20190513-133338.jpg" alt="">
+				</a>
+				<h4>Filter</h4>
+                                <p>BTS-Jimin</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://i.pinimg.com/originals/ff/39/7e/ff397ee249123d68ce9a0ef414e82ea9.jpg" alt="">
+				</a>
+				<h4>My Time</h4>
+				<p>BTS-Jungkook</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="7">
+					<img src="https://i.pinimg.com/236x/b3/09/c3/b309c372f24205de8af0a6c39fabe318.jpg" alt="">
+				</a>
+				<h4>Inner Child</h4>
+				<p>BTS-Taehyung</p>
+			</div>
+			
+		</div>
+
+
+		
+
+
+
+	</div>
+</div>
+
+	<div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+		    {
+		        name: 'ON',
+		        artist: 'BTS',
+		        url: 'source/ON.mp3',
+		        cover: 'https://www.somagnews.com/wp-content/uploads/2020/02/3-2-e1582311435505.jpg'
+		    },
+			{
+		        name: 'Zero o clock',  // SONG NAME
+		        artist: 'BTS-Vocal line', //ARTIST NAME
+		        url: 'source/Zero 0 clock.mp3', // PATH NAME AND SONG URL
+		        cover: 'https://i2.wp.com/checkersaga.com/wp-content/uploads/2020/05/bts-vocal-line.jpg?fit=750%2C550&ssl=1' // COVER IMAGE
+		    },
+			{
+				name: 'Ugh',
+				artist: 'BTS-Rap line',
+				url: 'source/UGH.mp3',
+				cover: 'https://www.somagnews.com/wp-content/uploads/2020/01/51-2-e1579735088904.jpg',
+			},
+			{
+				name: 'Friends',
+				artist: 'BTS-Jimin and V',
+				url: 'source/Friends.mp3',
+				cover: 'https://66.media.tumblr.com/d9f9f03ffefae78cbb06515dc18dcafe/tumblr_inline_pnt5lufhFq1rpcdyn_1280.jpg',
+			},
+                        {
+				name: 'Moon',
+				artist: 'Jin',
+				url: 'source/Moon.mp3',
+				cover: 'https://i.pinimg.com/originals/f4/ed/96/f4ed96579e23c6a3150240238b5ac97f.jpg',
+			},
+                        {
+				name: 'Filter',
+				artist: 'Jimin',
+				url: 'source/Filter.mp3',
+				cover: 'https://www.allkpop.com/upload/2019/08/content/251242/1566751372-img-20190513-133338.jpg',
+			},
+                        {
+				name: 'My Time',
+				artist: 'Jungkook',
+				url: 'source/My Time.mp3',
+				cover: 'https://i.pinimg.com/originals/ff/39/7e/ff397ee249123d68ce9a0ef414e82ea9.jpg',
+			},
+                        {
+				name: 'Inner Child',
+				artist: 'Taehyung',
+				url: 'source/Inner Child.mp3',
+				cover: 'https://i.pinimg.com/236x/b3/09/c3/b309c372f24205de8af0a6c39fabe318.jpg',
+			},
+                        
+
+		    ]
+		});
+</script>
+
+
+	
+
+	</body>
+</html>

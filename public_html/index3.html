@@ -1,0 +1,168 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>Love yourself:Answer</title>
+    </head>
+    <body>
+       <div class="main">
+           <div class="container">
+               <div class="row">
+			<div class="col-md-12">
+				<h3>Love yourself:Answer</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://mtv.mtvnimages.com/uri/mgid:ao:image:mtv.com:658479?quality=0.8&format=jpg&width=1440&height=810&.jpg" alt="">
+				</a>
+				<h4>IDOL</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://techzimo.com/wp-content/uploads/2020/04/BTS-Jungkook-Euphoria-4-million-sold-1280x720.jpg" alt="">
+				</a>
+				<h4>Euphoria</h4>
+                                <p>BTS-Jungkook</p>
+			</div>
+			
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://a.wattpad.com/cover/161431657-352-k530022.jpg" alt="">
+				</a>
+				<h4>Epiphany</h4>
+                                <p>BTS-Jin</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://i1.sndcdn.com/artworks-000490934880-vq9n3f-t500x500.jpg" alt="">
+				</a>
+				<h4>Trivia:Just dance</h4>
+                                <p>BTS-JHope</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src="https://i.ytimg.com/vi/RXmdi6RJZTY/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Trivia:Love</h4>
+                                <p>BTS-Namjoon</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://i.pinimg.com/originals/4c/c7/3c/4cc73cb1d54acbea2af3cb3ec915c9a5.jpg" alt="">
+				</a>
+				<h4>Trivia:seesaw</h4>
+                                <p>BTS-Yoongi</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://i.pinimg.com/736x/2a/a6/e5/2aa6e59765df5c60744ef248cdf73a0b.jpg" alt="">
+				</a>
+				<h4>I'm fine</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="7">
+					<img src="https://www.love-myself.org/wp-content/uploads/2018/08/180808_LMS_thumb.png" alt="">
+				</a>
+				<h4>Answer:Love myself</h4>
+                                <p>BTS</p>
+			</div>
+		</div>
+
+           </div>
+       </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                        {
+				name: 'IDOL',
+				artist: 'BTS',
+				url: 'source/IDOL.mp3',
+				cover: 'https://mtv.mtvnimages.com/uri/mgid:ao:image:mtv.com:658479?quality=0.8&format=jpg&width=1440&height=810&.jpg',
+			},
+                        {
+				name: 'Euphoria',
+				artist: 'BTS-Jungkook',
+				url: 'source/Euphoria.mp3',
+				cover: 'https://techzimo.com/wp-content/uploads/2020/04/BTS-Jungkook-Euphoria-4-million-sold-1280x720.jpg',
+			},
+                       
+                        {
+				name: 'Epiphany',
+				artist: 'BTS-Jin',
+				url: 'source/Epiphany.mp3',
+				cover: 'https://a.wattpad.com/cover/161431657-352-k530022.jpg',
+			},
+                       
+                        {
+				name: 'Trivia:Just dance',
+				artist: 'BTS-JHope',
+				url: 'source/Just dance.mp3',
+				cover: 'https://i1.sndcdn.com/artworks-000490934880-vq9n3f-t500x500.jpg',
+			},
+                        {
+				name: 'Trivia:Love',
+				artist: 'BTS-Namjoon',
+				url: 'source/Love.mp3',
+				cover: 'https://i.ytimg.com/vi/RXmdi6RJZTY/maxresdefault.jpg',
+			},
+                        {
+				name: 'Trivia:Seesaw',
+				artist: 'BTS-Yoongi',
+				url: 'source/Seesaw.mp3',
+				cover: 'https://i.pinimg.com/originals/4c/c7/3c/4cc73cb1d54acbea2af3cb3ec915c9a5.jpg',
+			},
+                         {
+				name: 'Im fine',
+				artist: 'BTS',
+				url: 'source/Im fine.mp3',
+				cover: 'https://i.pinimg.com/736x/2a/a6/e5/2aa6e59765df5c60744ef248cdf73a0b.jpg',
+			},
+                        {
+				name: 'Answer:Love myself',
+				artist: 'BTS',
+				url: 'source/Love myself.mp3',
+				cover: 'https://www.love-myself.org/wp-content/uploads/2018/08/180808_LMS_thumb.png',
+			},
+
+
+		    ]
+		});
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>Map of the soul:Persona</title>
+    </head>
+    <body>
+        <div class="main">
+	<div class="container">
+       <div class="row">
+			<div class="col-md-12">
+				<h3>Map of the soul:Persona</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://6.viki.io/image/18e6ab53af5d4f8f92d5c638647bef58.jpeg?s=900x600&e=t" alt="">
+				</a>
+				<h4>Boy with love</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://lh3.googleusercontent.com/DV1HZ64m3JSFsJpBghqocpnWj9rdg4aDdcFQmRAX4uakWxctgExJfgb3zws1kjnHjBr2P4gxBkvYtahPvteeyW0q29fW3PZ2ow=w1600-rj-nu-e365" alt="">
+				</a>
+				<h4>Mikrokosmos</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://post-phinf.pstatic.net/MjAxOTA0MThfMjU5/MDAxNTU1NTk2NDMyNjQ0.V52kZVyNboF0S8EEHwaMzcTeIiJmhW7uyi_TTNYg05Qg.cIPoxLl8oXKpYk0gHsqVB9BDP-SH7ZFvrR-c8520vDcg.JPEG/Make_It_Right_%283%29.jpg" alt="">
+				</a>
+				<h4>Make it right</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://post-phinf.pstatic.net/MjAxOTA0MThfMjg0/MDAxNTU1NTk2ODk2OTIz.sHwy2j4HT3ClryzgazO_XSKCReLgRd-vaPbJIYhiFr0g.Dsqk-0fG-N8L6Ja_C4dnhNJe-E_cRLpo2y-BC7ia7Ksg.JPEG/%EB%94%94%EC%98%A4%EB%8B%88%EC%86%8C%EC%8A%A4_%281%29.jpg" alt="">
+				</a>
+				<h4>Dionysus</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src="https://i.pinimg.com/originals/60/81/34/6081344aab3faf87589d186c3a1d1671.jpg" alt="">
+				</a>
+				<h4>Jamais vu</h4>
+                                <p>BTS-Jin,Jungkook,J-hope</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://a.wattpad.com/cover/193542996-288-k49983.jpg" alt="">
+				</a>
+				<h4>Home</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://pm1.narvii.com/6873/fb0217f0208cb088d0c8f07b00c746d987666d1fr1-640-950v2_uhq.jpg" alt="">
+				</a>
+				<h4>Persona</h4>
+                                <p>BTS-RM</p>
+			</div>
+		</div>
+        </div>
+        </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                         {
+				name: 'Boy with love',
+				artist: 'BTS',
+				url: 'source/Boy With Luv.mp3',
+				cover: 'https://6.viki.io/image/18e6ab53af5d4f8f92d5c638647bef58.jpeg?s=900x600&e=t',
+			},
+                        {
+				name: 'Mikrokosmos',
+				artist: 'BTS',
+				url: 'source/Mikrokosmos.mp3',
+				cover: 'https://lh3.googleusercontent.com/DV1HZ64m3JSFsJpBghqocpnWj9rdg4aDdcFQmRAX4uakWxctgExJfgb3zws1kjnHjBr2P4gxBkvYtahPvteeyW0q29fW3PZ2ow=w1600-rj-nu-e365',
+			},
+                        {
+				name: 'Make it right',
+				artist: 'BTS',
+				url: 'source/Make It Right.mp3',
+				cover: 'https://post-phinf.pstatic.net/MjAxOTA0MThfMjU5/MDAxNTU1NTk2NDMyNjQ0.V52kZVyNboF0S8EEHwaMzcTeIiJmhW7uyi_TTNYg05Qg.cIPoxLl8oXKpYk0gHsqVB9BDP-SH7ZFvrR-c8520vDcg.JPEG/Make_It_Right_%283%29.jpg',
+			},
+                        {
+				name: 'Dionysus',
+				artist: 'BTS',
+				url: 'source/Dionysus.mp3',
+				cover: 'https://post-phinf.pstatic.net/MjAxOTA0MThfMjg0/MDAxNTU1NTk2ODk2OTIz.sHwy2j4HT3ClryzgazO_XSKCReLgRd-vaPbJIYhiFr0g.Dsqk-0fG-N8L6Ja_C4dnhNJe-E_cRLpo2y-BC7ia7Ksg.JPEG/%EB%94%94%EC%98%A4%EB%8B%88%EC%86%8C%EC%8A%A4_%281%29.jpg',
+			},
+                        {
+				name: 'Jamais vu',
+				artist: 'BTS-Jin,Jungkook,J-hope',
+				url: 'source/Jamais Vu.mp3',
+				cover: 'https://i.pinimg.com/originals/60/81/34/6081344aab3faf87589d186c3a1d1671.jpg',
+			},
+                        {
+				name: 'Home',
+				artist: 'BTS',
+				url: 'source/Home.mp3',
+				cover: 'https://a.wattpad.com/cover/193542996-288-k49983.jpg',
+			},
+                        {
+				name: 'Persona',
+				artist: 'BTS-RM',
+				url: 'source/Persona.mp3',
+				cover: 'https://pm1.narvii.com/6873/fb0217f0208cb088d0c8f07b00c746d987666d1fr1-640-950v2_uhq.jpg',
+			},
+                            ]
+		});
+</script>
+    </body>
+</html>
