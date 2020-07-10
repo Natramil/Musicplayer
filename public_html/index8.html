@@ -1,0 +1,116 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>You never walk alone</title>
+    </head>
+    <body>
+       <div class="main">
+           <div class="container">
+               <div class="row">
+			<div class="col-md-12">
+				<h3>You never walk alone</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://thebiaslistcom.files.wordpress.com/2017/02/bts-spring-day.jpg" alt="">
+				</a>
+				<h4>Spring day</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1vy7GI3oaT7Hq12Jwpj9NYsdcNmTdhs1YgQ&usqp=CAU" alt="">
+				</a>
+				<h4>Not today</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://i.vimeocdn.com/video/618376202_1280x720.jpg" alt="">
+				</a>
+				<h4>Supplementary story:You never walk alone</h4>
+                                <p>BTS</p>
+			</div>
+                   <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://i.ytimg.com/vi/Om5Ly9MP0x4/hqdefault.jpg" alt="">
+				</a>
+				<h4>Outro:Wings</h4>
+                                <p>BTS</p>
+			</div>
+			
+		</div>
+
+           </div>
+       </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                        {
+				name: 'Spring day',
+				artist: 'BTS',
+				url: 'source/Spring day.mp3',
+				cover: 'https://thebiaslistcom.files.wordpress.com/2017/02/bts-spring-day.jpg',
+			},
+                       
+                        {
+				name: 'Not today',
+				artist: 'BTS',
+				url: 'source/Not today.mp3',
+				cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1vy7GI3oaT7Hq12Jwpj9NYsdcNmTdhs1YgQ&usqp=CAU',
+			},
+                        {
+				name: 'You never walk alone',
+				artist: 'BTS',
+				url: 'source/You never walk alone.mp3',
+				cover: 'https://i.vimeocdn.com/video/618376202_1280x720.jpg',
+			},
+                         {
+				name: 'Outro:Wings',
+				artist: 'BTS',
+				url: 'source/Interlude-Wings.mp3',
+				cover: 'https://i.ytimg.com/vi/Om5Ly9MP0x4/hqdefault.jpg',
+			},
+
+
+		    ]
+		});
+</script>
+
+    </body>
+</html>
+

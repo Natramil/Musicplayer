@@ -1,0 +1,179 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>The most beautiful moment in life pt.2</title>
+    </head>
+    <body>
+       <div class="main">
+           <div class="container">
+               <div class="row">
+			<div class="col-md-12">
+				<h3>The most beautiful moment in life pt.2</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://i.ytimg.com/vi/3AaVLYuRen4/hqdefault.jpg" alt="">
+				</a>
+				<h4>Intro:Nevermind</h4>
+                                <p>BTS-Rapline</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://farm2.staticflickr.com/1511/24504707883_1d209c692c_o.jpg" alt="">
+				</a>
+				<h4>Run</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://wallpaperaccess.com/full/1381155.jpg" alt="">
+				</a>
+				<h4>Butterfly</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://i.ytimg.com/vi/7yz_Ge3R95o/hqdefault.jpg" alt="">
+				</a>
+				<h4>Whalien 52</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src="https://i1.sndcdn.com/artworks-000505511730-5edg5i-t500x500.jpg" alt="">
+				</a>
+				<h4>Ma city</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://i.ytimg.com/vi/-uQqTGp44A4/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Silver spoon</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://a.wattpad.com/cover/120359760-288-k360942.jpg" alt="">
+				</a>
+				<h4>Autumn leaves</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="7">
+					<img src="https://i1.sndcdn.com/artworks-000158955755-nxlok9-t500x500.jpg" alt="">
+				</a>
+				<h4>Young forever</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="8">
+					<img src="https://i1.sndcdn.com/artworks-000513376152-4k6ffd-t500x500.jpg" alt="">
+				</a>
+				<h4>Outro:House of cards</h4>
+                                <p>BTS-Vocal line</p>
+			</div>
+		</div>
+
+           </div>
+       </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                        {
+				name: 'Intro:Never mind',
+				artist: 'BTS-Rap line',
+				url: 'source/Never mind.mp3',
+				cover: 'https://i.ytimg.com/vi/3AaVLYuRen4/hqdefault.jpg',
+			},
+                       
+                        {
+				name: 'Run',
+				artist: 'BTS',
+				url: 'source/Run.mp3',
+				cover: 'https://farm2.staticflickr.com/1511/24504707883_1d209c692c_o.jpg',
+			},
+                        {
+				name: 'Butterfly',
+				artist: 'BTS',
+				url: 'source/Butterfly.mp3',
+				cover: 'https://wallpaperaccess.com/full/1381155.jpg',
+			},
+                        {
+				name: 'Whalien 52',
+				artist: 'BTS',
+				url: 'source/Whalien.mp3',
+				cover: 'https://i.ytimg.com/vi/7yz_Ge3R95o/hqdefault.jpg',
+			},
+                        {
+				name: 'Ma city',
+				artist: 'BTS',
+				url: 'source/Ma city.mp3',
+				cover: 'https://i1.sndcdn.com/artworks-000505511730-5edg5i-t500x500.jpg',
+			},
+                        {
+				name: 'Silver spoon',
+				artist: 'BTS',
+				url: 'source/Silver spoon.mp3',
+				cover: 'https://i.ytimg.com/vi/-uQqTGp44A4/maxresdefault.jpg',
+			},
+                        {
+				name: 'Autumn leaves',
+				artist: 'BTS',
+				url: 'source/Autumn leaves.mp3',
+				cover: 'https://a.wattpad.com/cover/120359760-288-k360942.jpg',
+			},
+                        {
+				name: 'Young forever',
+				artist: 'BTS',
+				url: 'source/Young forever.mp3',
+				cover: 'https://i1.sndcdn.com/artworks-000158955755-nxlok9-t500x500.jpg',
+			},
+                         {
+				name: 'Outro:House of cards',
+				artist: 'BTS-Vocal line',
+				url: 'source/House of cards.mp3',
+				cover: 'https://i1.sndcdn.com/artworks-000513376152-4k6ffd-t500x500.jpg',
+			},
+
+
+		    ]
+		});
+</script>
+
+    </body>
+</html>
