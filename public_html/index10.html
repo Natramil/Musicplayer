@@ -1,0 +1,208 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>Skool luv affair</title>
+    </head>
+    <body>
+       <div class="main">
+           <div class="container">
+               <div class="row">
+			<div class="col-md-12">
+				<h3>Skool luv affair</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://i.quotev.com/img/q/u/16/3/27/!!!..jpg" alt="">
+				</a>
+				<h4>Miss Right</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://i.ytimg.com/vi/F_CVF7tQgLA/hqdefault.jpg" alt="">
+				</a>
+				<h4>I Like it</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTvPgAAVNEv1KvnKu4ohyylxFJhDnxPiWhD-g&usqp=CAU" alt="">
+				</a>
+				<h4>Intro:Skool luv affair</h4>
+                                <p>BTS-Rap line</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/61U9c4Mn0BL.jpg" alt="">
+				</a>
+				<h4>Boy in luv</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src="https://i.ytimg.com/vi/LLAH_SeHB9k/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Where you from</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://i.ytimg.com/vi/77rFYAFftUw/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Just one day</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://i1.sndcdn.com/artworks-000071018161-zpb4a4-t500x500.jpg" alt="">
+                                </a>
+				<h4>Tomorrow</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="7">
+					<img src="https://c-sf.smule.com/rs-s29/arr/a6/88/3392f026-874a-44f2-a486-8118f2ac3e41_512.jpg" alt="">
+				</a>
+				<h4>Cypher pt2</h4>
+                                <p>BTS-Rap line</p>
+			</div>
+                   <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="8">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMWG9XxBepUiRRHApu_ANC-ArfsKIAUP0cMQ&usqp=CAU" alt="">
+				</a>
+				<h4>Spine breaker</h4>
+                                <p>BTS</p>
+			</div>
+                   <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="9">
+					<img src="https://i.ytimg.com/vi/PEdxOqTlt_Y/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Jump</h4>
+                                <p>BTS</p>
+			</div>
+                   <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="10">
+					<img src="https://i.ytimg.com/vi/R7dicwu_B78/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Outro:Propose</h4>
+                                <p>BTS-Vocal line</p>
+			</div>
+                   
+                   
+		</div>
+
+           </div>
+       </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                        {
+				name: 'MissRight',
+				artist: 'BTS',
+				url: 'source/Miss right.mp3',
+				cover: 'https://i.quotev.com/img/q/u/16/3/27/!!!..jpg',
+			},
+                       
+                        {
+				name: 'I like it',
+				artist: 'BTS',
+				url: 'source/I like it.mp3',
+				cover: 'https://i.ytimg.com/vi/F_CVF7tQgLA/hqdefault.jpg',
+			},
+                        {
+				name: 'Intro:Skool Luv Affair',
+				artist: 'BTS-Rap line',
+				url: 'source/Intro skool luv affair.mp3',
+				cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTvPgAAVNEv1KvnKu4ohyylxFJhDnxPiWhD-g&usqp=CAU',
+			},
+                        {
+				name: 'Boy in luv',
+				artist: 'BTS',
+				url: 'source/Boy in luv.mp3',
+				cover: 'https://images-na.ssl-images-amazon.com/images/I/61U9c4Mn0BL.jpg',
+			},
+                        {
+				name: 'Where you from',
+				artist: 'BTS',
+				url: 'source/Where you from.mp3',
+				cover: 'https://i.ytimg.com/vi/LLAH_SeHB9k/maxresdefault.jpg',
+			},
+                        {
+				name: 'Just one day',
+				artist: 'BTS',
+				url: 'source/Just one day.mp3',
+				cover: 'https://i.ytimg.com/vi/77rFYAFftUw/maxresdefault.jpg',
+			},
+                        {
+				name: 'Tomorrow',
+				artist: 'BTS',
+				url: 'source/Tomorrow.mp3',
+				cover: 'https://i1.sndcdn.com/artworks-000071018161-zpb4a4-t500x500.jpg',
+			},
+                         {
+				name: 'Cypher pt2',
+				artist: 'BTS-Rap line',
+				url: 'source/Cipher pt.2.mp3',
+				cover: 'https://c-sf.smule.com/rs-s29/arr/a6/88/3392f026-874a-44f2-a486-8118f2ac3e41_512.jpg',
+			},
+                        {
+				name: 'Spine breaker',
+				artist: 'BTS',
+				url: 'source/Spine breaker.mp3',
+				cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMWG9XxBepUiRRHApu_ANC-ArfsKIAUP0cMQ&usqp=CAU',
+			},
+                        {
+				name: 'Jump',
+				artist: 'BTS',
+				url: 'source/Jump.mp3',
+				cover: 'https://i.ytimg.com/vi/PEdxOqTlt_Y/maxresdefault.jpg',
+			},
+                        {
+				name: 'Outro:Propose',
+				artist: 'BTS-Vocal line',
+				url: 'source/Outro propose.mp3',
+				cover: 'https://i.ytimg.com/vi/R7dicwu_B78/maxresdefault.jpg',
+			},
+                        
+                       
+
+		    ]
+		});
+</script>
+
+    </body>
+</html>

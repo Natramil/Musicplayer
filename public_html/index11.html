@@ -1,0 +1,180 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>O!RUL8,2?</title>
+    </head>
+    <body>
+       <div class="main">
+           <div class="container">
+               <div class="row">
+			<div class="col-md-12">
+				<h3>O!RUL8,2?</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://pm1.narvii.com/6764/08e21afd8e9ec4dad554afbe54c1da838a56f643v2_hq.jpg" alt="">
+				</a>
+				<h4>Intro:O!RUL8,2?</h4>
+                                <p>BTS-RM</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://pm1.narvii.com/6815/410e03860507f625756edb7334692231007e123av2_hq.jpg" alt="">
+				</a>
+				<h4>N.O</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://vignette.wikia.nocookie.net/the-bangtan-boys/images/3/3e/BTS_Webtoon_1_Be_The_Shield.png/revision/latest/top-crop/width/360/height/450?cb=20190121032851" alt="">
+				</a>
+				<h4>We on</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://static.wixstatic.com/media/e139c4_7d47e9dc327b49f19d33a4ea40492f51~mv2.jpg" alt="">
+				</a>
+				<h4>If I ruled the world</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="4">
+					<img src="https://a.wattpad.com/cover/25410834-288-k147089.jpg" alt="">
+				</a>
+				<h4>Coffee</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="5">
+					<img src="https://pm1.narvii.com/6424/894f5c9be146a259b67c28eb03127aea73436b77_hq.jpg" alt="">
+				</a>
+				<h4>Cypher pt.1</h4>
+                                <p>BTS-Rap line</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="6">
+					<img src="https://i.pinimg.com/originals/5b/c0/b3/5bc0b3b8c42e22c39f26a383ff835e51.jpg" alt="">
+                                </a>
+				<h4>Attack on Bangtan</h4>
+                                <p>BTS</p>
+			</div>
+                    <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="7">
+					<img src="https://i.ytimg.com/vi/EqLgJIMVW3c/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Paldogangsan</h4>
+                                <p>BTS</p>
+			</div>
+                   <div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="8">
+					<img src="https://i.ytimg.com/vi/jKoyj0r6jyE/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Outro:Luv in skool</h4>
+                                <p>BTS-Vocal line</p>
+			</div>
+                   
+		</div>
+
+           </div>
+       </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                        {
+				name: 'Intro:O!RUL8,2?',
+				artist: 'BTS-RM',
+				url: 'source/Intro o rul8,2.mp3',
+				cover: 'https://pm1.narvii.com/6764/08e21afd8e9ec4dad554afbe54c1da838a56f643v2_hq.jpg',
+			},
+                       
+                        {
+				name: 'N.O',
+				artist: 'BTS',
+				url: 'source/No.mp3',
+				cover: 'https://pm1.narvii.com/6815/410e03860507f625756edb7334692231007e123av2_hq.jpg',
+			},
+                        {
+				name: 'We on',
+				artist: 'BTS',
+				url: 'source/We on.mp3',
+				cover: 'https://vignette.wikia.nocookie.net/the-bangtan-boys/images/3/3e/BTS_Webtoon_1_Be_The_Shield.png/revision/latest/top-crop/width/360/height/450?cb=20190121032851',
+			},
+                        {
+				name: 'If I ruled the world',
+				artist: 'BTS',
+				url: 'source/If i ruled the world.mp3',
+				cover: 'https://static.wixstatic.com/media/e139c4_7d47e9dc327b49f19d33a4ea40492f51~mv2.jpg',
+			},
+                        {
+				name: 'Coffee',
+				artist: 'BTS',
+				url: 'source/Coffee.mp3',
+				cover: 'https://a.wattpad.com/cover/25410834-288-k147089.jpg',
+			},
+                        {
+				name: 'Cypher pt.1',
+				artist: 'BTS-Rap line',
+				url: 'source/Cipher pt1.mp3',
+				cover: 'https://pm1.narvii.com/6424/894f5c9be146a259b67c28eb03127aea73436b77_hq.jpg',
+			},
+                        {
+				name: 'Attack on Bangtan',
+				artist: 'BTS',
+				url: 'source/Attack on bangtan.mp3',
+				cover: 'https://i.pinimg.com/originals/5b/c0/b3/5bc0b3b8c42e22c39f26a383ff835e51.jpg',
+			},
+                         {
+				name: 'Paldogangsan',
+				artist: 'BTS',
+				url: 'source/Paldogangsan.mp3',
+				cover: 'https://i.ytimg.com/vi/EqLgJIMVW3c/maxresdefault.jpg',
+			},
+                        {
+				name: 'Outro:Luv in skool',
+				artist: 'BTS-Vocal line',
+				url: 'source/Outro luv in skool.mp3',
+				cover: 'https://i.ytimg.com/vi/jKoyj0r6jyE/maxresdefault.jpg',
+			},
+                        
+
+		    ]
+		});
+</script>
+
+    </body>
+</html>

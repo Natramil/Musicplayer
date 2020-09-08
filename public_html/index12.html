@@ -1,0 +1,115 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+        
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <title>2 cool 4 skool</title>
+    </head>
+    <body>
+       <div class="main">
+           <div class="container">
+               <div class="row">
+			<div class="col-md-12">
+				<h3>2 cool 4 skool</h3>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="0">
+					<img src="https://i.ytimg.com/vi/qiTDeW470DY/maxresdefault.jpg" alt="">
+				</a>
+				<h4>Intro:2 cool 4 skool</h4>
+                                <p>BTS-RM</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="1">
+					<img src="https://i2.wp.com/images2.wikia.nocookie.net/__cb20130715052242/drama/es/images/6/6c/BTS_01.jpg" alt="">
+				</a>
+				<h4>We are bulletproof pt:2</h4>
+                                <p>BTS</p>
+			</div>
+			
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="2">
+					<img src="https://wallpapercave.com/wp/wp4388494.jpg" alt="">
+				</a>
+				<h4>No more dream</h4>
+                                <p>BTS</p>
+			</div>
+			<div class="col-md-3">
+				<a href="#" class="album-poster" data-switch="3">
+					<img src="https://pm1.narvii.com/7335/c06bbc14f210c359adc54ca4b5de550e86051981r1-1181-886v2_hq.jpg" alt="">
+				</a>
+				<h4>Outro:circle room cypher</h4>
+                                <p>BTS</p>
+			</div>
+			
+		</div>
+
+           </div>
+       </div>
+        <div id="aplayer"></div>
+        <!-- Jquery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<!-- Bootstrap Link -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<!-- APlayer Jquery link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>	
+        <script>
+// NOW I CLICK album-poster TO GET CURRENT SONG ID
+		$(".album-poster").on('click', function(e){
+			var dataSwitchId = $(this).attr('data-switch');
+			//console.log(dataSwitchId);
+
+			// and now i use aplayer switch function see
+			ap.list.switch(dataSwitchId); //this is static id but i use dynamic 
+
+			// aplayer play function
+			// when i click any song to play
+			ap.play();
+
+			// click to slideUp player see
+			$("#aplayer").addClass('showPlayer');
+		});
+
+		const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: [
+                        {
+				name: 'Intro:2 cool 4 skool',
+				artist: 'BTS-RM',
+				url: 'source/Intro-2 cool 4 skool.mp3',
+				cover: 'https://i.ytimg.com/vi/qiTDeW470DY/maxresdefault.jpg',
+			},
+                       
+                        {
+				name: 'We are bulletproof',
+				artist: 'BTS',
+				url: 'source/We are bulletproof pt 2.mp3',
+				cover: 'https://i2.wp.com/images2.wikia.nocookie.net/__cb20130715052242/drama/es/images/6/6c/BTS_01.jpg',
+			},
+                        {
+				name: 'No more dream',
+				artist: 'BTS',
+				url: 'source/No more dream.mp3',
+				cover: 'https://wallpapercave.com/wp/wp4388494.jpg',
+			},
+                        {
+				name: 'Outro:circle room cypher',
+				artist: 'BTS',
+				url: 'source/Outro-circle room cypher.mp3',
+				cover: 'https://pm1.narvii.com/7335/c06bbc14f210c359adc54ca4b5de550e86051981r1-1181-886v2_hq.jpg',
+			},
+                        
+
+		    ]
+		});
+</script>
+
+    </body>
+</html>
